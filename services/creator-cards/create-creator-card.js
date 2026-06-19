@@ -91,7 +91,7 @@ function validateAccessCode(accessType, accessCode) {
       .split('')
       .every((c) => (c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z') || (c >= '0' && c <= '9'))
   ) {
-    throwAppError(CreatorCardMessages.ACCESS_CODE_INVALID, ERROR_CODE.CRTRINVLDACC);
+    throwAppError(CreatorCardMessages.ACCESS_CODE_FORMAT_INVALID, ERROR_CODE.VALIDATIONERR);
   }
   if ((!accessType || accessType === 'public') && accessCode) {
     throwAppError(CreatorCardMessages.ACCESS_CODE_NOT_ALLOWED, ERROR_CODE.CRTRACCPUBLIC);

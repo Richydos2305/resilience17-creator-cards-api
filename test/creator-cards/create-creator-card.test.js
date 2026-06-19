@@ -107,7 +107,7 @@ describe('createCreatorCard', () => {
       assert.strictEqual(caughtErr.errorCode, 'AC05');
     });
 
-    it('throws AC04 if access_code contains non-alphanumeric characters', async () => {
+    it('throws VALIDATION_ERROR if access_code contains non-alphanumeric characters', async () => {
       let caughtErr;
       try {
         await createCreatorCard({ ...BASE_PAYLOAD, access_type: 'private', access_code: 'abc!23' });
@@ -115,7 +115,7 @@ describe('createCreatorCard', () => {
         caughtErr = e;
       }
       assert.ok(caughtErr, 'expected an error to be thrown');
-      assert.strictEqual(caughtErr.errorCode, 'AC04');
+      assert.strictEqual(caughtErr.errorCode, 'VALIDATION_ERROR');
     });
   });
 
