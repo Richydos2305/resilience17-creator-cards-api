@@ -28,6 +28,8 @@ const ERROR_CODE = {
   CRTRSLUGDUPE: 'SL02',
 };
 
+// Only codes that map to a non-400 status need to be listed here.
+// Any application error code not in this map falls back to 400 via the server's `|| 400` default.
 const ERROR_STATUS_CODE_MAPPING = {
   AUTHORIZATION_ERROR: 401,
   MISSING_AUTHORIZATION: 401,
@@ -40,16 +42,12 @@ const ERROR_STATUS_CODE_MAPPING = {
   FEE_ERROR: 403,
   RESOURCE_NOT_FOUND: 404,
   DUPLICATE_RECORD: 409,
-  VALIDATION_ERROR: 400,
   APPLICATION_ERROR: 500,
   RATE_LIMIT_ERROR: 429,
   NF01: 404,
   NF02: 404,
-  AC01: 400,
   AC03: 403,
   AC04: 403,
-  AC05: 400,
-  SL02: 400,
 };
 
 module.exports = { ERROR_CODE, ERROR_STATUS_CODE_MAPPING };
