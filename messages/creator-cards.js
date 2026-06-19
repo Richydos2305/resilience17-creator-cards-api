@@ -1,0 +1,16 @@
+module.exports = {
+  CARD_NOT_FOUND: 'Creator card not found',
+  CARD_DRAFT_NOT_FOUND: 'Creator card not found',
+  ACCESS_CODE_REQUIRED: 'access_code is required when access_type is private',
+  ACCESS_CODE_REQUIRED_VIEW: 'This card is private. An access code is required',
+  ACCESS_CODE_INVALID: 'Invalid access code',
+  ACCESS_CODE_NOT_ALLOWED: 'access_code can only be set on private cards',
+  LINK_URL_INVALID: 'Link URL must start with http:// or https://',
+  SERVICE_RATES_EMPTY: 'service_rates.rates must not be empty',
+  SERVICE_RATE_AMOUNT_INVALID: 'Service rate amount must be a positive integer',
+  SLUG_INVALID: 'Slug may only contain letters, numbers, hyphens, and underscores',
+  SLUG_TAKEN: 'Slug is already taken',
+  CREATE_SUCCESS: 'Creator Card Created Successfully.',
+  GET_SUCCESS: 'Creator Card Retrieved Successfully.',
+  DELETE_SUCCESS: 'Creator Card Deleted Successfully.',
+};
