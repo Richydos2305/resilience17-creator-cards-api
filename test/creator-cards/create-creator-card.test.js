@@ -47,6 +47,14 @@ describe('createCreatorCard', () => {
       const result = await createCreatorCard({ ...BASE_PAYLOAD, slug: 'custom-slug' });
       assert.strictEqual(result.slug, 'custom-slug');
     });
+
+    it('derives a slug within the 50-character limit for long titles', async () => {
+      const result = await createCreatorCard({
+        ...BASE_PAYLOAD,
+        title: 'This Is A Very Long Title That Is Over Forty-Five Characters Long',
+      });
+      assert.ok(result.slug.length <= 50);
+    });
   });
 
   describe('field validation', () => {

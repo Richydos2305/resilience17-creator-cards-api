@@ -40,7 +40,8 @@ function deriveSlug(text) {
       if (acc.length > 0 && acc.slice(-1) !== '-') return `${acc}-`;
       return acc;
     }, '');
-  return slug.endsWith('-') ? slug.slice(0, -1) : slug;
+  const truncated = slug.length > 43 ? slug.slice(0, 43) : slug;
+  return truncated.endsWith('-') ? truncated.slice(0, -1) : truncated;
 }
 
 function randomSuffix() {
